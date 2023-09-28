@@ -67,6 +67,7 @@ class _HomeDisplayState extends State<HomeDisplay> {
     setState(() {
       isPlaying = false;
       isFinished = false;
+      isResting = false;
       cycle = 0;
       round = 0;
       goal = 12;
