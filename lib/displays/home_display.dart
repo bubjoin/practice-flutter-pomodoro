@@ -10,6 +10,7 @@ class HomeDisplay extends StatefulWidget {
 
 class _HomeDisplayState extends State<HomeDisplay> {
   static List<int> wholeMinutes = [15, 20, 25, 30, 35];
+  static List<int> restMinutes = [5, 10, 15, 20, 25];
   static int pick = wholeMinutes[0];
   int wholeSeconds = 60 * pick;
   bool isPlaying = false;
@@ -130,7 +131,7 @@ class _HomeDisplayState extends State<HomeDisplay> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Choose Minutes',
+                          isResting ? 'Choose Resting' : 'Choose Minutes',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -138,88 +139,171 @@ class _HomeDisplayState extends State<HomeDisplay> {
                           ),
                         ),
                         Row(
-                          children: [
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  pick = wholeMinutes[0];
-                                  wholeSeconds = 60 * pick;
-                                });
-                              },
-                              child: Text(
-                                '15',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Theme.of(context).cardColor,
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  pick = wholeMinutes[1];
-                                  wholeSeconds = 60 * pick;
-                                });
-                              },
-                              child: Text(
-                                '20',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Theme.of(context).cardColor,
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  pick = wholeMinutes[2];
-                                  wholeSeconds = 60 * pick;
-                                });
-                              },
-                              child: Text(
-                                '25',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Theme.of(context).cardColor,
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  pick = wholeMinutes[3];
-                                  wholeSeconds = 60 * pick;
-                                });
-                              },
-                              child: Text(
-                                '30',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Theme.of(context).cardColor,
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  pick = wholeMinutes[4];
-                                  wholeSeconds = 60 * pick;
-                                });
-                              },
-                              child: Text(
-                                '35',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Theme.of(context).cardColor,
-                                ),
-                              ),
-                            ),
-                          ],
+                          children: isResting
+                              ? [
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = restMinutes[0];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '5',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = restMinutes[1];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '10',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = restMinutes[2];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '15',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = restMinutes[3];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '20',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = restMinutes[4];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '25',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                              : [
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = wholeMinutes[0];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '15',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = wholeMinutes[1];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '20',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = wholeMinutes[2];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '25',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = wholeMinutes[3];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '30',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        pick = wholeMinutes[4];
+                                        wholeSeconds = 60 * pick;
+                                      });
+                                    },
+                                    child: Text(
+                                      '35',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).cardColor,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                         ),
                       ],
                     )
@@ -288,7 +372,7 @@ class _HomeDisplayState extends State<HomeDisplay> {
                               ),
                             ),
                             Text(
-                              isFinished ? 'Finished' : '$round/12',
+                              isFinished ? 'Fin!' : '$round/12',
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
