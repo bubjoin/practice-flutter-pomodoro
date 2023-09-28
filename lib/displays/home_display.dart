@@ -32,9 +32,15 @@ class _HomeDisplayState extends State<HomeDisplay> {
             round = round + 1;
           }
           if (round == goal) {
+            timer.cancel();
+            isResting = false;
             isFinished = true;
           }
-          wholeSeconds = 60 * 5;
+          if (isFinished == true) {
+            wholeSeconds = 0;
+          } else {
+            wholeSeconds = 60 * 5;
+          }
         });
       } else {
         setState(() {
