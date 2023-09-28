@@ -1,8 +1,8 @@
 # practice_flutter_pomodoro
 
-A new Flutter project.
+The first flutter practice project to upload github
 
-## Getting Started
+## Getting Started by Flutter
 
 This project is a starting point for a Flutter application.
 
