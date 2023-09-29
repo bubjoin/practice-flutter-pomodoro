@@ -5,7 +5,8 @@ The first flutter practice project to upload github
 [Demo](https://imgur.com/a/O6F3D2X) : https://imgur.com/a/O6F3D2X  
   
 ### Checklist  
-  
+
+- [x] Basic work flow, screen layout - business logic - data  
 - [x] No status bar on the screen top  
 - [x] Use Flexible for overall layout  
 - [x] Make a Container a button  
