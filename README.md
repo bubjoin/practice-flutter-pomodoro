@@ -11,6 +11,7 @@ The first flutter practice project to upload github
 - [x] Make a Container a button  
 - [x] Use statful widget and setState((){});  
 - [x] Split dart files and import class  
+- [x] Use Timer in terms of periodic and cancel
 - [ ] Fix position of text  
 
 ## Tutorials by Flutter
